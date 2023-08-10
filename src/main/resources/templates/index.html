@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Coupon Home</title>
+</head>
+<body>
+
+
+<table>
+        <tr>
+            <td>쿠폰 Id</td>
+            <td>수량</td>
+        </tr>
+        <tr th:each="coupon : ${couponList}">
+
+            <td th:text="${coupon.getId()}"></td>
+            <td th:text="${coupon.getQuantity()}"></td>
+            <td>
+                <a th:href="@{/increment/{param1}(param1=${coupon.getId()})}">+ </a>
+            </td>
+            <td>
+                <a type="button" th:href="@{/decrement/{param1}(param1=${coupon.getId()})}">-</a>
+            </td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <form th:action="@{/add}" th:object="${couponAddDto}" method="post">
+        <h2>쿠폰 생성하기</h2>
+        <div>
+            <label for="quantity">수량</label>
+            <input type="number" id="quantity" th:name="quantity" placeholder="수량을 입력하세요.">
+        </div>
+        <div>
+            <button type="submit">쿠폰 등록</button>
+        </div>
+    </form>
+</body>
+</html>
