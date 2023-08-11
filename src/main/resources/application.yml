@@ -28,7 +28,7 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:mysql://spring-vpc-db.ciamiexdzz7r.ap-northeast-2.rds.amazonaws.com:3306/example?characterEncoding=utf8&autoReconnect=true
+    url: jdbc:mysql://spring-vpc-rds-rr.ciamiexdzz7r.ap-northeast-2.rds.amazonaws.com:3306/example?characterEncoding=utf8&autoReconnect=true
     username: admin
     password: skfTlrkdPQjdy777.
     driver-class-name: com.mysql.cj.jdbc.Driver
